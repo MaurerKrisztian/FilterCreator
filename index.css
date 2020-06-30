@@ -1,0 +1,23 @@
+.menu {
+  color: white;
+  background-color: black;
+  font-size: 25px;
+}
+
+li {
+  padding: 5px;
+  border-bottom: 1px solid black;
+  border-color: gray;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.menuItem {
+  color: white;
+  background-color: orange;
+  font-size: 20px;
+  border: 3px solid black;
+  
+}
