@@ -1,84 +1,83 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html, body {
-  background-color: #30343F;
-  padding: 0;
-  margin: 0;
-  scroll-behavior: smooth;
-  font-family: 'Roboto', sans-serif;
+    background-color: #30343F;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
 }
 
 h2 {
-  background-color: #14181E;
-  color: white;
-  padding-left: 40px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  margin: 0px;
+    background-color: #14181E;
+    color: white;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0px;
 }
 
-div{
-  padding-left: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+div {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
-.columns{
-  padding: 0;
-  display: grid;
+.columns {
+    padding: 0;
+    display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-areas:
-        "left-column right-column"
-    ;
+        "left-column right-column";
 }
 
-.left-column{
-  padding: 0;
-  grid-area: left-column;
-  max-width: 100%;
+.left-column {
+    padding: 0;
+    grid-area: left-column;
+    max-width: 100%;
 }
 
-.right-column{
-  padding: 0;
-  grid-area: right-column;
-  margin: auto;
-  width: 600px;
+.right-column {
+    padding: 0;
+    grid-area: right-column;
+    margin: auto;
+    width: 600px;
 }
 
 .menu {
-  color: white;
-  background-color: #191E2B;
-  font-size: 20px;
+    color: white;
+    background-color: #191E2B;
+    font-size: 20px;
 }
 
 li {
-  padding: 5px;
-  border-bottom: 1px solid black;
-  border-color: gray;
-  list-style: none;
+    padding: 5px;
+    border-bottom: 1px solid black;
+    border-color: gray;
+    list-style: none;
 }
 
 a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .menuItem {
-  color: white;
-  background-color: #30343F;
-  font-size: 20px;
-  border: none;
-  display: none;
+    color: white;
+    background-color: #30343F;
+    font-size: 20px;
+    border: none;
+    display: none;
 }
 
-.inputoutput{
-  width: 300px;
-  height: fit-content;
+.inputoutput {
+    width: 300px;
+    height: fit-content;
 }
 
-#canvasOutput{
-  max-width: 300px;
+#canvasOutput {
+    max-width: 300px;
 }
 
-#imageSrc{
-  max-width: 300px;
+#imageSrc {
+    max-width: 300px;
 }

@@ -11,7 +11,7 @@
    mat = cv.imread(imgElement);
    tmpMat = cv.imread(imgElement);
 
-   var size = tmpMat.size();
+     var size = tmpMat.size();
    console.log("image size: " + size.width + " x " + size.height);
    document.getElementById('width').value = size.width;
    document.getElementById('height').value = size.height;
