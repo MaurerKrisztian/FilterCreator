@@ -74,6 +74,10 @@ a:link {
     height: fit-content;
 }
 
+button{
+  margin: 10px;
+}
+
 #canvasOutput {
     max-width: 300px;
 }
