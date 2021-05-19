@@ -23,6 +23,26 @@ div{
   padding-bottom: 5px;
 }
 
+.columns{
+  padding: 0;
+  display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "left-column right-column"
+    ;
+}
+
+.left-column{
+  padding: 0;
+  grid-area: left-column;
+  max-width: 60%;
+}
+
+.right-column{
+  padding: 0;
+  grid-area: right-column;
+}
+
 .menu {
   color: white;
   background-color: #191E2B;
