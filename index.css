@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 html, body {
+  background-color: #30343F;
   padding: 0;
   margin: 0;
   scroll-behavior: smooth;
@@ -24,7 +25,7 @@ div{
 
 .menu {
   color: white;
-  background-color: #252935;
+  background-color: #191E2B;
   font-size: 20px;
 }
 

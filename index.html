@@ -9,7 +9,7 @@
 <h2>Hello OpenCV.js</h2>
 
  <a href="#">
-<div class="menu" onclick="setVisibility('blur')">--- BLUR ---</div>
+<div class="menu" onclick="setVisibility('blur')">Blur</div>
 </a>
 <div class="menuItem" id="blur">
   <li>
@@ -19,37 +19,37 @@
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('color')">--- COLORS ---</div>
+<div class="menu" onclick="setVisibility('color')">Colors</div>
 </a>
 <div class="menuItem" id="color">
   <li>
     Black and white
-    <button onclick="blackAndWite()"> black and wite </button>
+    <button onclick="blackAndWite()"> Black and white </button>
   </li>
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('treshold')">--- TRESHOLD --- *(csak feketefeher kepel)</div>
+<div class="menu" onclick="setVisibility('treshold')">Treshold *(csak fekete fehér képpel)</div>
 </a>
 <div class="menuItem" id="treshold">
   <li>
-    treshold min:   <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1" oninput="treshold()">
+    Treshold min:   <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1" oninput="treshold()">
     <br>
-    treshold max:   <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1" oninput="treshold()">
+    Treshold max:   <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1" oninput="treshold()">
   </li>
   <li>
     Adaptive treshold  <br>
-    value:   <input type="range" id="adaptiveTreshold" value="170" min="1" max="255" step="1" oninput="adaptiveTreshold()">
+    Value:   <input type="range" id="adaptiveTreshold" value="170" min="1" max="255" step="1" oninput="adaptiveTreshold()">
     <br>
-    block size:   <input type="range" id="adaptiveTresholdBlockSize" value="3" min="1" max="50" step="1" oninput="adaptiveTreshold()">
+    Block size:   <input type="range" id="adaptiveTresholdBlockSize" value="3" min="1" max="50" step="1" oninput="adaptiveTreshold()">
     <br>
-    constant: <input type="range" id="adaptiveTresholdConstant" value="2" min="1" max="20" step="1" oninput="adaptiveTreshold()">
+    Constant: <input type="range" id="adaptiveTresholdConstant" value="2" min="1" max="20" step="1" oninput="adaptiveTreshold()">
     </li>
 
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('Histogram')">--- HISTORGRAM ---  *(csak feketefeher kepel)</div>
+<div class="menu" onclick="setVisibility('Histogram')">Historgram *(csak fekete fehér képpel)</div>
 </a>
 <div class="menuItem" id="Histogram">
   <button onclick="showHistogram()">Show histogram</button>
@@ -57,19 +57,19 @@
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('brightnessContrast')">--- BRIGHTNESS AND CONTRAST ---</div>
+<div class="menu" onclick="setVisibility('brightnessContrast')">Brightness and Contrast</div>
 </a>
 <div class="menuItem" id="brightnessContrast">
   <li>
-    brightness:   <input type="range" id="brightness" value="2" min="-255" max="255" step="1" oninput="brightnessAndContrast()">
+    Brightness:   <input type="range" id="brightness" value="2" min="-255" max="255" step="1" oninput="brightnessAndContrast()">
     </li>
     <li>
-    contrast:   <input type="range" id="contrast" value="0.8" min="0" max="2" step="0.1" oninput="brightnessAndContrast()">
+    Contrast:   <input type="range" id="contrast" value="0.8" min="0" max="2" step="0.1" oninput="brightnessAndContrast()">
   </li>
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('resize')">--- RESIZE ROTATE ---</div>
+<div class="menu" onclick="setVisibility('resize')">Resize Rotate</div>
 </a>
 <div class="menuItem" id="resize">
   <li>
@@ -83,7 +83,7 @@
 </div>
 
 <a href="#">
-<div class="menu" onclick="setVisibility('denoising')">--- Denoising ---</div>
+<div class="menu" onclick="setVisibility('denoising')">Denoising</div>
 </a>
 <div class="menuItem" id="denoising">
   <li>
@@ -100,10 +100,10 @@
 
 
 
-<button onclick="showHistogram()">test</button>
+<button onclick="showHistogram()">Test</button>
 
-<button onclick="setChanges()">set changes</button>
-<button onclick="reset()">reset</button>
+<button onclick="setChanges()">Set changes</button>
+<button onclick="reset()">Reset</button>
 <button onclick="showHistogram()">Show histogram</button>
 
 
@@ -113,7 +113,7 @@
   <div class="inputoutput">
     <canvas id="canvasOutput" ></canvas>
     <canvas id="canvasOutputHist" ></canvas>
-    <div class="caption">canvasOutput</div>
+    <div class="caption">CanvasOutput</div>
   </div>
 
 
