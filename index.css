@@ -1,6 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  background-color: #14181E;
+  color: white;
+  padding-left: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: 0px;
+}
+
+div{
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .menu {
   color: white;
-  background-color: green;
+  background-color: #252935;
   font-size: 20px;
 }
 
@@ -16,7 +40,7 @@ a:link {
 
 .menuItem {
   color: white;
-  background-color: orange;
+  background-color: #30343F;
   font-size: 20px;
   border: 3px solid black;
   
