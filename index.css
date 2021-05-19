@@ -67,6 +67,7 @@ a:link {
   background-color: #30343F;
   font-size: 20px;
   border: none;
+  display: none;
 }
 
 .inputoutput{
