@@ -18,15 +18,10 @@ inputElement.addEventListener('change', (e) => {
 imgElement.onload = function () {
     mat = cv.imread(imgElement);
     tmpMat = cv.imread(imgElement);
-
-    var size = tmpMat.size();
-    console.log("image size: " + size.width + " x " + size.height);
+    const size = tmpMat.size();
     document.getElementById('width').value = size.width;
     document.getElementById('height').value = size.height;
-
-
     cv.imshow('canvasOutput', mat);
-    //mat.delete();
 };
 
 function onOpenCvReady() {
@@ -36,31 +31,26 @@ function onOpenCvReady() {
 ///// filters
 
 function blackAndWite() {
-
-    console.log("feketefeher filter. ");
     cv.cvtColor(mat, tmpMat, cv.COLOR_RGBA2GRAY, 0);
     cv.imshow('canvasOutput', tmpMat);
 }
 
 function setBlur() {
-    console.log("blur filter. ");
+    const trackbar = document.getElementById('trackbar');
+    const trackbarValue = parseInt(trackbar.value);
 
-    var trackbar = document.getElementById('trackbar');
-    var trackbarValue = parseInt(trackbar.value);
-
-    var ksize = new cv.Size(trackbarValue, trackbarValue);
-    var anchor = new cv.Point(-1, -1);
+    const ksize = new cv.Size(trackbarValue, trackbarValue);
+    const anchor = new cv.Point(-1, -1);
 
     cv.blur(mat, tmpMat, ksize, anchor, cv.BORDER_DEFAULT);
-
     cv.imshow('canvasOutput', tmpMat);
 }
 
 function treshold() {
-    var trackbar = document.getElementById('tresholdTrackbarMin');
-    var trackbarValueMin = parseInt(trackbar.value);
-    var trackbar2 = document.getElementById('tresholdTrackbarMax');
-    var trackbarValueMax = parseInt(trackbar2.value);
+    const trackbar = document.getElementById('tresholdTrackbarMin');
+    const trackbarValueMin = parseInt(trackbar.value);
+    const trackbar2 = document.getElementById('tresholdTrackbarMax');
+    const trackbarValueMax = parseInt(trackbar2.value);
 
     console.log("set treshold: (" + trackbarValueMin + ", " + trackbarValueMax + ") ");
 
@@ -71,64 +61,54 @@ function treshold() {
 function adaptiveTreshold() {
     //cv.cvtColor(mat, mat, cv.COLOR_RGBA2GRAY, 0);
 
-    var adaptiveTresholdTrackbar = document.getElementById('adaptiveTreshold');
-    var adaptiveTresholdTrackbarValue = parseInt(adaptiveTresholdTrackbar.value);
+    const adaptiveThresholdTrackbar = document.getElementById('adaptiveTreshold');
+    const adaptiveThresholdTrackbarValue = parseInt(adaptiveThresholdTrackbar.value);
 
-    var adaptiveTresholdBlockSizeTrackbar = document.getElementById('adaptiveTresholdBlockSize');
-    var BlockSize = parseInt(adaptiveTresholdBlockSizeTrackbar.value);
+    const adaptiveThresholdBlockSizeTrackbar = document.getElementById('adaptiveTresholdBlockSize');
+    const BlockSize = parseInt(adaptiveThresholdBlockSizeTrackbar.value);
 
-    var adaptiveTresholdConstantTrackbar = document.getElementById('adaptiveTresholdConstant');
-    var constant = parseInt(adaptiveTresholdConstantTrackbar.value);
+    const adaptiveThresholdConstantTrackbar = document.getElementById('adaptiveTresholdConstant');
+    const constant = parseInt(adaptiveThresholdConstantTrackbar.value);
 
-    cv.adaptiveThreshold(mat, tmpMat, adaptiveTresholdTrackbarValue, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, BlockSize, constant);
+    cv.adaptiveThreshold(mat, tmpMat, adaptiveThresholdTrackbarValue, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, BlockSize, constant);
     cv.imshow('canvasOutput', tmpMat);
 }
 
 
 function equalizeHistogramGray() {
-    console.log("equalizeHistogram");
-
     cv.cvtColor(mat, tmpMat, cv.COLOR_RGBA2GRAY, 0);
-
     cv.equalizeHist(tmpMat, tmpMat);
     cv.imshow('canvasOutput', tmpMat);
 }
 
 function brightnessAndContrast() {
-    var trackbar = document.getElementById('brightness');
-    var brightnessTrackbarValue = parseFloat(trackbar.value);
-    var trackbar2 = document.getElementById('contrast');
-    var contrastTrackbarValue = parseFloat(trackbar2.value);
-
-    console.log("set brightness " + brightnessTrackbarValue + " and contrast" + contrastTrackbarValue);
-
+    const trackbar = document.getElementById('brightness');
+    const brightnessTrackbarValue = parseFloat(trackbar.value);
+    const trackbar2 = document.getElementById('contrast');
+    const contrastTrackbarValue = parseFloat(trackbar2.value);
     mat.convertTo(tmpMat, -1, contrastTrackbarValue, brightnessTrackbarValue);
     cv.imshow('canvasOutput', tmpMat);
 }
 
 function resize() {
+    const widthInp = document.getElementById('width');
+    const widthInpValue = parseInt(widthInp.value);
+    const heightInp = document.getElementById('height');
+    const heightInpValue = parseInt(heightInp.value);
 
-    var widthInp = document.getElementById('width');
-    var widthInpValue = parseInt(widthInp.value);
-    var heightInp = document.getElementById('height');
-    var heightInpValue = parseInt(heightInp.value);
-
-    console.log("resize: " + widthInpValue + " x " + heightInpValue);
-
-    let dsize = new cv.Size(widthInpValue, heightInpValue);
+    const dsize = new cv.Size(widthInpValue, heightInpValue);
     cv.resize(mat, tmpMat, dsize, 0, 0, cv.INTER_AREA);
-
     cv.imshow('canvasOutput', tmpMat);
 }
 
 function rotate() {
-    var rotateInp = document.getElementById('rotate');
-    var rotateInpValue = parseInt(rotateInp.value);
+    const rotateInp = document.getElementById('rotate');
+    const rotateInpValue = parseInt(rotateInp.value);
 
-    let dsize = new cv.Size(mat.rows, mat.cols);
-    let center = new cv.Point(mat.cols / 2, mat.rows / 2);
+    const dsize = new cv.Size(mat.rows, mat.cols);
+    const center = new cv.Point(mat.cols / 2, mat.rows / 2);
     // You can try more different parameters
-    let M = cv.getRotationMatrix2D(center, rotateInpValue, 1);
+    const M = cv.getRotationMatrix2D(center, rotateInpValue, 1);
     cv.warpAffine(mat, tmpMat, M, dsize, cv.INTER_LINEAR, cv.BORDER_CONSTANT, new cv.Scalar());
     cv.imshow('canvasOutput', tmpMat);
 }
@@ -162,42 +142,25 @@ function showHistogram() {
 
 
 function setChanges() {
-    //mat = new cv.Mat(tmpMat);
-
     mat = tmpMat.clone();
     cv.imshow('canvasOutput', mat);
 }
 
 function reset() {
-    //tmpMat = mat;
     mat = cv.imread(imgElement);
     tmpMat = mat.clone();
     cv.imshow('canvasOutput', mat);
 }
 
 function bilateral() {
-    var dInp = document.getElementById('d');
-    var dValue = parseInt(dInp.value);
-    var sigmaColorInp = document.getElementById('sigmaColor');
-    var sigmaColorValue = parseInt(sigmaColorInp.value);
-    var sigmaSpaceInp = document.getElementById('sigmaSpace');
-    var sigmaSpaceValue = parseInt(sigmaSpaceInp.value);
+    const dInp = document.getElementById('d');
+    const dValue = parseInt(dInp.value);
+    const sigmaColorInp = document.getElementById('sigmaColor');
+    const sigmaColorValue = parseInt(sigmaColorInp.value);
+    const sigmaSpaceInp = document.getElementById('sigmaSpace');
+    const sigmaSpaceValue = parseInt(sigmaSpaceInp.value);
 
     cv.cvtColor(mat, mat, cv.COLOR_RGBA2RGB, 0);
     cv.bilateralFilter(mat, tmpMat, dValue, sigmaColorValue, sigmaSpaceValue, cv.BORDER_DEFAULT);
     cv.imshow('canvasOutput', tmpMat);
-}
-
-function test() {
-    console.log("test");
-
-
-    for (let i = 0; i < tmpMat.rows; i++) {
-        for (let j = 0; j < tmpMat.cols; j++) {
-            tmpMat.ucharPtr(i, j)[2] += 20;
-
-        }
-    }
-    cv.imshow('canvasOutput', tmpMat);
-
 }
