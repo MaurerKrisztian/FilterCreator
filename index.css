@@ -26,7 +26,7 @@ div{
 .columns{
   padding: 0;
   display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr;
     grid-template-areas:
         "left-column right-column"
     ;
@@ -35,12 +35,14 @@ div{
 .left-column{
   padding: 0;
   grid-area: left-column;
-  max-width: 60%;
+  max-width: 100%;
 }
 
 .right-column{
   padding: 0;
   grid-area: right-column;
+  margin: auto;
+  width: 600px;
 }
 
 .menu {
@@ -65,4 +67,17 @@ a:link {
   font-size: 20px;
   border: 3px solid black;
   
+}
+
+.inputoutput{
+  width: 300px;
+  height: fit-content;
+}
+
+#canvasOutput{
+  max-width: 300px;
+}
+
+#imageSrc{
+  max-width: 300px;
 }
