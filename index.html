@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Hello OpenCV.js</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
@@ -11,7 +12,7 @@
 <div class="columns">
     <div class="left-column">
         <a href="#">
-            <div class="menu" onclick="setVisibility('blur')">Blur</div>
+            <div class="menu" onclick="setVisibility('blur')"><i class="material-icons">blur_on</i> Blur</div>
         </a>
 
         <div class="menuItem" id="blur">
@@ -22,7 +23,7 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('color')">Colors</div>
+            <div class="menu" onclick="setVisibility('color')"><i class="material-icons">palette</i> Colors</div>
         </a>
         <div class="menuItem" id="color">
             <li>
@@ -32,18 +33,18 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('treshold')">Treshold *(csak fekete fehér képpel)</div>
+            <div class="menu" onclick="setVisibility('treshold')"><i class="material-icons">stacked_line_chart</i> Threshold *(csak fekete fehér képpel)</div>
         </a>
         <div class="menuItem" id="treshold">
             <li>
-                Treshold min: <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1"
+                Threshold min: <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1"
                                      oninput="treshold()">
                 <br>
-                Treshold max: <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1"
+                Threshold max: <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1"
                                      oninput="treshold()">
             </li>
             <li>
-                Adaptive treshold <br>
+                Adaptive threshold <br>
                 Value: <input type="range" id="adaptiveTreshold" value="170" min="1" max="255" step="1"
                               oninput="adaptiveTreshold()">
                 <br>
@@ -57,7 +58,7 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('Histogram')">Historgram *(csak fekete fehér képpel)</div>
+            <div class="menu" onclick="setVisibility('Histogram')"><i class="material-icons">bar_chart</i> Histogram *(csak fekete fehér képpel)</div>
         </a>
         <div class="menuItem" id="Histogram">
             <button onclick="showHistogram()">Show histogram</button>
@@ -65,7 +66,7 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('brightnessContrast')">Brightness and Contrast</div>
+            <div class="menu" onclick="setVisibility('brightnessContrast')"><i class="material-icons">brightness_medium</i> Brightness and Contrast</div>
         </a>
         <div class="menuItem" id="brightnessContrast">
             <li>
@@ -79,7 +80,7 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('resize')">Resize Rotate</div>
+            <div class="menu" onclick="setVisibility('resize')"><i class="material-icons">cached</i> Resize Rotate</div>
         </a>
         <div class="menuItem" id="resize">
             <li>
@@ -93,7 +94,7 @@
         </div>
 
         <a href="#">
-            <div class="menu" onclick="setVisibility('denoising')">Denoising</div>
+            <div class="menu" onclick="setVisibility('denoising')"><i class="material-icons">exposure</i> Denoising</div>
         </a>
         <div class="menuItem" id="denoising">
             <li>
