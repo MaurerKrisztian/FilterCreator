@@ -40,7 +40,8 @@ div {
 .right-column {
     padding: 0;
     grid-area: right-column;
-    margin: auto;
+    margin-left: 10px;
+    margin-right: 10px;
     width: 800px;
 }
 
@@ -77,6 +78,13 @@ a:link {
 button{
   margin: 10px;
   display: inline-block;
+  font-size: 15px;
+  padding: 10px;
+  border: transparent;
+  border-radius: 20px;
+  background-color: #191e2b;
+  color: white;
+  font-family: 'Roboto', sans-serif;
 }
 
 #canvasOutput {
@@ -89,8 +97,32 @@ button{
 
 .caption{
   margin: 10px;
-  display: inline-block;
-  padding-top: 0;
-  padding-bottom: 0;
+  display: inline;
+  padding: 0;
+  width: 0;
 }
 
+.button-div{
+    padding: 0;
+    display: inline-flex;
+    width: 900px;
+    justify-content: space-around;
+}
+
+label{
+    width: auto;
+    border: transparent;
+    margin: 10px;
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px;
+    border: transparent;
+    border-radius: 20px;
+    background-color: #191e2b;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type="file"]{
+    display: none;
+}
