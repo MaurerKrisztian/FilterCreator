@@ -6,9 +6,18 @@ var tmpMat;
 
 function download() {
     const link = document.createElement('a');
-    link.download = imgElement.src;
+    link.download = getFileName();
     link.href = document.getElementById('canvasOutput').toDataURL()
     link.click();
+}
+
+function getFileName() {
+    const str = document.getElementById('fileInput').value;
+    const n = str.lastIndexOf('/');
+    const n2 = str.lastIndexOf('\\');
+    const pos = (n>n2)? n : n2
+    const result = str.substring(pos + 1);
+    return result
 }
 
 inputElement.addEventListener('change', (e) => {
