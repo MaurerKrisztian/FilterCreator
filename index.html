@@ -1,127 +1,151 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Hello OpenCV.js</title>
-<link rel="stylesheet" type="text/css" href="index.css">
+    <meta charset="utf-8">
+    <title>Hello OpenCV.js</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
 <h2>Hello OpenCV.js</h2>
 
- <a href="#">
-<div class="menu" onclick="setVisibility('blur')">--- BLUR ---</div>
-</a>
-<div class="menuItem" id="blur">
-  <li>
-    Blur size:
-    <input type="range" id="trackbar" value="4" min="1" max="40" step="1" oninput="setBlur()">
-  </li>
-</div>
+<div class="columns">
+    <div class="left-column">
+        <a href="#">
+            <div class="menu" onclick="setVisibility('blur')"><i class="material-icons">blur_on</i> Blur</div>
+        </a>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('color')">--- COLORS ---</div>
-</a>
-<div class="menuItem" id="color">
-  <li>
-    Black and white
-    <button onclick="blackAndWite()"> black and wite </button>
-  </li>
-</div>
+        <div class="menuItem" id="blur">
+            <li>
+                Blur size:
+                <input type="range" id="trackbar" value="4" min="1" max="40" step="1" oninput="setBlur()">
+            </li>
+        </div>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('treshold')">--- TRESHOLD --- *(csak feketefeher kepel)</div>
-</a>
-<div class="menuItem" id="treshold">
-  <li>
-    treshold min:   <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1" oninput="treshold()">
-    <br>
-    treshold max:   <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1" oninput="treshold()">
-  </li>
-  <li>
-    Adaptive treshold  <br>
-    value:   <input type="range" id="adaptiveTreshold" value="170" min="1" max="255" step="1" oninput="adaptiveTreshold()">
-    <br>
-    block size:   <input type="range" id="adaptiveTresholdBlockSize" value="3" min="1" max="50" step="1" oninput="adaptiveTreshold()">
-    <br>
-    constant: <input type="range" id="adaptiveTresholdConstant" value="2" min="1" max="20" step="1" oninput="adaptiveTreshold()">
-    </li>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('color')"><i class="material-icons">palette</i> Colors</div>
+        </a>
+        <div class="menuItem" id="color">
+            <li>
+                Black and white
+                <button onclick="blackAndWite()"> Black and white</button>
+            </li>
+        </div>
 
-</div>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('treshold')"><i class="material-icons">stacked_line_chart</i> Threshold *(csak fekete fehér képpel)</div>
+        </a>
+        <div class="menuItem" id="treshold">
+            <li>
+                Threshold min: <input type="range" id="tresholdTrackbarMin" value="170" min="1" max="255" step="1"
+                                     oninput="treshold()">
+                <br>
+                Threshold max: <input type="range" id="tresholdTrackbarMax" value="240" min="1" max="255" step="1"
+                                     oninput="treshold()">
+            </li>
+            <li>
+                Adaptive threshold <br>
+                Value: <input type="range" id="adaptiveTreshold" value="170" min="1" max="255" step="1"
+                              oninput="adaptiveTreshold()">
+                <br>
+                Block size: <input type="range" id="adaptiveTresholdBlockSize" value="3" min="1" max="50" step="1"
+                                   oninput="adaptiveTreshold()">
+                <br>
+                Constant: <input type="range" id="adaptiveTresholdConstant" value="2" min="1" max="20" step="1"
+                                 oninput="adaptiveTreshold()">
+            </li>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('Histogram')">--- HISTORGRAM ---  *(csak feketefeher kepel)</div>
-</a>
-<div class="menuItem" id="Histogram">
-  <button onclick="showHistogram()">Show histogram</button>
-  <button onclick="equalizeHistogramGray()"> Equalize histogram gray </button>
-</div>
+        </div>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('brightnessContrast')">--- BRIGHTNESS AND CONTRAST ---</div>
-</a>
-<div class="menuItem" id="brightnessContrast">
-  <li>
-    brightness:   <input type="range" id="brightness" value="2" min="-255" max="255" step="1" oninput="brightnessAndContrast()">
-    </li>
-    <li>
-    contrast:   <input type="range" id="contrast" value="0.8" min="0" max="2" step="0.1" oninput="brightnessAndContrast()">
-  </li>
-</div>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('Histogram')"><i class="material-icons">bar_chart</i> Histogram *(csak fekete fehér képpel)</div>
+        </a>
+        <div class="menuItem" id="Histogram">
+            <button onclick="showHistogram()">Show histogram</button>
+            <button onclick="equalizeHistogramGray()"> Equalize histogram gray</button>
+        </div>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('resize')">--- RESIZE ROTATE ---</div>
-</a>
-<div class="menuItem" id="resize">
-  <li>
-    Width: <input type="text" id="width" size="5" value="500"/>
-    Height: <input type="text" id="height" size="5" value="500"/>
-    <button onclick="resize()"> Resize </button>
-  </li>
-  <li>
-    Rotate: <input type="range" id="rotate" value="0" min="-180" max="180" step="1" oninput="rotate()">
-  </li>
-</div>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('brightnessContrast')"><i class="material-icons">brightness_medium</i> Brightness and Contrast</div>
+        </a>
+        <div class="menuItem" id="brightnessContrast">
+            <li>
+                Brightness: <input type="range" id="brightness" value="2" min="-255" max="255" step="1"
+                                   oninput="brightnessAndContrast()">
+            </li>
+            <li>
+                Contrast: <input type="range" id="contrast" value="0.8" min="0" max="2" step="0.1"
+                                 oninput="brightnessAndContrast()">
+            </li>
+        </div>
 
-<a href="#">
-<div class="menu" onclick="setVisibility('denoising')">--- Denoising ---</div>
-</a>
-<div class="menuItem" id="denoising">
-  <li>
-    Bilateral Filter
-<br>
-    d: <input type="range" id="d" value="10" min="-255" max="255" step="1" oninput="bilateral()">  *(diameter of each pixel neighborhood that is used during filtering)
-<br>
-    sigmaColor: <input type="range" id="sigmaColor" value="75" min="-200" max="200" step="1" oninput="bilateral()">
-<br>
-    sigmaSpace: <input type="range" id="sigmaSpace" value="75" min="-200" max="200" step="1" oninput="bilateral()">
-  </li>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('resize')"><i class="material-icons">cached</i> Resize Rotate</div>
+        </a>
+        <div class="menuItem" id="resize">
+            <li>
+                Width: <input type="text" id="width" size="5" value="500"/>
+                Height: <input type="text" id="height" size="5" value="500"/>
+                <button onclick="resize()"> Resize</button>
+            </li>
+            <li>
+                Rotate: <input type="range" id="rotate" value="0" min="-180" max="180" step="1" oninput="rotate()">
+            </li>
+        </div>
 
-</div>
+        <a href="#">
+            <div class="menu" onclick="setVisibility('denoising')"><i class="material-icons">exposure</i> Denoising</div>
+        </a>
+        <div class="menuItem" id="denoising">
+            <li>
+                Bilateral Filter
+                <br>
+                d: <input type="range" id="d" value="10" min="-255" max="255" step="1" oninput="bilateral()"> *(diameter
+                of each pixel neighborhood that is used during filtering)
+                <br>
+                sigmaColor: <input type="range" id="sigmaColor" value="75" min="-200" max="200" step="1"
+                                   oninput="bilateral()">
+                <br>
+                sigmaSpace: <input type="range" id="sigmaSpace" value="75" min="-200" max="200" step="1"
+                                   oninput="bilateral()">
+            </li>
+
+        </div>
+
+    </div>
+
+    <div class="right-column">
+        <!-- <button onclick="showHistogram()">Test</button> -->
+        
+        <div class="button-div">
+            <button onclick="setChanges()">Set changes</button>
+            <button onclick="reset()">Reset</button>
+            <button onclick="showHistogram()">Show histogram</button>
+            <button onclick="download()">Download</button>
+            <label for="fileInput">Choose a photo</label>
+
+            <div class="caption"> <input type="file" id="fileInput" name="file" /></div>
+        </div>
 
 
+        <br>
+        <p id="status">OpenCV.js is loading...</p>
+        <div>
+            <div class="inputoutput">
+                <canvas id="canvasOutput"></canvas>
+                <canvas id="canvasOutputHist"></canvas>
+                <div class="caption">CanvasOutput</div>
+            </div>
 
-<button onclick="showHistogram()">test</button>
+            <div class="inputoutput">
+              <img id="imageSrc" alt="No Image" />
+              <!-- <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div> -->
+            </div>
 
-<button onclick="setChanges()">set changes</button>
-<button onclick="reset()">reset</button>
-<button onclick="showHistogram()">Show histogram</button>
+            
 
-
-<br>
-<p id="status">OpenCV.js is loading...</p>
-<div>
-  <div class="inputoutput">
-    <canvas id="canvasOutput" ></canvas>
-    <canvas id="canvasOutputHist" ></canvas>
-    <div class="caption">canvasOutput</div>
-  </div>
-
-
-
-  <div class="inputoutput">
-    <img id="imageSrc" alt="No Image" />
-    <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
-  </div>
+        </div>
+    </div>
 
 </div>
 <script src="displayMenu.js"></script>

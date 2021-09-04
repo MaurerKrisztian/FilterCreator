@@ -1,23 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body {
+    background-color: #30343F;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    background-color: #14181E;
+    color: white;
+    padding-left: 40px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+div {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.columns {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+        "left-column right-column";
+}
+
+.left-column {
+    padding: 0;
+    grid-area: left-column;
+    max-width: 100%;
+}
+
+.right-column {
+    padding: 0;
+    grid-area: right-column;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 800px;
+}
+
 .menu {
-  color: white;
-  background-color: black;
-  font-size: 25px;
+    color: white;
+    background-color: #191E2B;
+    font-size: 20px;
 }
 
 li {
-  padding: 5px;
-  border-bottom: 1px solid black;
-  border-color: gray;
+    padding: 5px;
+    border-bottom: 1px solid black;
+    border-color: gray;
+    list-style: none;
 }
 
 a:link {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .menuItem {
+    color: white;
+    background-color: #30343F;
+    font-size: 20px;
+    border: none;
+    display: none;
+}
+
+.inputoutput {
+    width: 300px;
+    height: fit-content;
+}
+
+button{
+  margin: 10px;
+  display: inline-block;
+  font-size: 15px;
+  padding: 10px;
+  border: transparent;
+  border-radius: 20px;
+  background-color: #191e2b;
   color: white;
-  background-color: orange;
-  font-size: 20px;
-  border: 3px solid black;
-  
+  font-family: 'Roboto', sans-serif;
+}
+
+#canvasOutput {
+    max-width: 300px;
+}
+
+#imageSrc {
+    max-width: 300px;
+}
+
+.caption{
+  margin: 10px;
+  display: inline;
+  padding: 0;
+  width: 0;
+}
+
+.button-div{
+    padding: 0;
+    display: inline-flex;
+    width: 900px;
+    justify-content: space-around;
+}
+
+label{
+    width: auto;
+    border: transparent;
+    margin: 10px;
+    display: inline-block;
+    font-size: 15px;
+    padding: 10px;
+    border: transparent;
+    border-radius: 20px;
+    background-color: #191e2b;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+input[type="file"]{
+    display: none;
 }
